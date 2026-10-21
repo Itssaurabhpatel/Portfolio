@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X, Code2, Layers3, MoveUpRight, Play } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X, Code2, Layers3, MoveUpRight, Play, Star, FileText, Clock, ArrowUp } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
@@ -113,6 +113,49 @@ const services = [
   ['05', 'Backend & APIs', 'Reliable APIs, authentication flows, and dependable integrations built for scale.'],
   ['06', 'Personal & custom tools', 'Purpose-built utilities, scripts, and internal dashboards that eliminate repetitive manual work.'],
   ['07', 'Business websites', 'Distinctive websites that help your business look credible, fast, and memorable.'],
+]
+
+const testimonials = [
+  {
+    quote: "The fee management system saved us countless hours and reduced errors to near zero. The automated billing and RazorPay reconciliation are completely seamless.",
+    author: "Sarah Johnson",
+    initials: "SJ",
+    role: "School Administrator",
+    company: "Education Group Network",
+    project: "Smart Fee Management",
+    impact: "90% manual workload cut",
+    rating: 5
+  },
+  {
+    quote: "Operations transformed completely. Accuracy improved dramatically with the AI chatbot order flow, and our kitchen staff handles rush hours without chaos.",
+    author: "John Smith",
+    initials: "JS",
+    role: "Managing Director",
+    company: "Restaurant Industry Solutions",
+    project: "Restaurant AI Ordering",
+    impact: "60% faster order processing",
+    rating: 5
+  },
+  {
+    quote: "Visually stunning, loads fast, and sales improved immediately! The fluid micro-interactions and smooth landing experience turned curious visitors into paying customers.",
+    author: "Priya Mehta",
+    initials: "PM",
+    role: "Head of Digital & E-Commerce",
+    company: "Fashion & Lifestyle Brand",
+    project: "E-Commerce Landing",
+    impact: "30% higher retention",
+    rating: 5
+  },
+  {
+    quote: "Exceptional user experience and significant increase in qualified buyer inquiries! The map-based exploration and instant filtering gave our agency a competitive edge.",
+    author: "Michael Chang",
+    initials: "MC",
+    role: "Principal Broker",
+    company: "Real Estate Solutions Inc.",
+    project: "UrbanHaven PropTech",
+    impact: "40% faster property search",
+    rating: 5
+  }
 ]
 
 function WhatsAppIcon({ size = 15, className = '' }) {
@@ -294,6 +337,7 @@ export default function App() {
           <a href="#work" onClick={closeMenu}>Work <span>01</span></a>
           <a href="#services" onClick={closeMenu}>What I do <span>02</span></a>
           <a href="#about" onClick={closeMenu}>About <span>03</span></a>
+          <a href="#testimonials" onClick={closeMenu}>Reviews <span>04</span></a>
           <a className="nav-contact" href="#contact" onClick={closeMenu}>Let’s talk <ArrowUpRight size={15} /></a>
         </nav>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</button>
@@ -349,10 +393,50 @@ export default function App() {
         </div>
       </section>
 
+      <section className="testimonials-section" id="testimonials">
+        <div className="section-shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow"><span>04</span> / CLIENT FEEDBACK & TRUST</p>
+              <h2>Results speak.<br /><em>Clients agree.</em></h2>
+            </div>
+            <p className="section-intro">
+              Direct outcomes and feedback from educational institutions, founders, and business teams.
+            </p>
+          </div>
+
+          <div className="testimonials-grid">
+            {testimonials.map((t, idx) => (
+              <article className="testimonial-card" key={idx}>
+                <div className="testimonial-top">
+                  <div className="testimonial-stars" aria-label={`${t.rating} out of 5 stars`}>
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} size={14} fill="#facc15" color="#facc15" />
+                    ))}
+                  </div>
+                  <span className="testimonial-impact">{t.impact}</span>
+                </div>
+
+                <p className="testimonial-quote">“{t.quote}”</p>
+
+                <div className="testimonial-author">
+                  <div className="author-avatar">{t.initials}</div>
+                  <div className="author-details">
+                    <span className="author-name">{t.author}</span>
+                    <span className="author-meta">{t.role} · {t.company}</span>
+                  </div>
+                  <span className="author-project">{t.project}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact" ref={contactSectionRef}>
         <div className="contact-color-sweep" ref={contactCircleRef} aria-hidden="true" />
         <div className="section-shell contact-inner">
-          <p className="eyebrow"><span>04</span> / HAVE SOMETHING IN MIND?</p>
+          <p className="eyebrow"><span>05</span> / HAVE SOMETHING IN MIND?</p>
           <h2>Let’s make<br />something <span className="matter-wrap"><em>matter.</em><Flourish className="matter-flourish" /></span></h2>
           <p className="contact-copy">Have a business challenge, an idea, or a project that needs a developer? Tell me what you’re working on.</p>
           <a className="contact-email" href="mailto:saurabh.devworks@gmail.com">
@@ -380,7 +464,90 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="footer section-shell"><a className="brand footer-brand" href="#top"><span className="brand-symbol">S<span>.</span></span><span>SAURABH PATEL<small>MADE WITH INTENTION</small></span></a><p>© {new Date().getFullYear()} SAURABH PATEL</p><a href="#top" className="back-top">BACK TO TOP ↑</a></footer>
+      <footer className="footer-wrap" id="footer">
+        <div className="section-shell footer-inner">
+          <div className="footer-top-tier">
+            <div className="footer-brand-block">
+              <a className="brand footer-brand" href="#top">
+                <span className="brand-symbol">S<span>.</span></span>
+                <span>SAURABH PATEL<small>FULL-STACK & AI DEVELOPER</small></span>
+              </a>
+              <p className="footer-tagline">
+                Designing and engineering dependable backend systems, modern web products, and high-conversion digital experiences.
+              </p>
+              <div className="footer-status-pill">
+                <span className="live-dot" />
+                <span>Available for freelance contracts & engineering opportunities</span>
+              </div>
+            </div>
+
+            <div className="footer-actions">
+              <a className="button-primary footer-cta" href="#contact">
+                Start a project <ArrowUpRight size={16} />
+              </a>
+              <a className="button-quiet footer-resume" href="./Saurabh_Patel_Resume.pdf" download="Saurabh_Patel_Resume.pdf" target="_blank" rel="noreferrer">
+                <FileText size={15} />
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-grid">
+            <div className="footer-col">
+              <h4>NAVIGATION</h4>
+              <nav className="footer-links">
+                <a href="#work">01 / Selected Work</a>
+                <a href="#services">02 / What I Do</a>
+                <a href="#about">03 / About Me</a>
+                <a href="#testimonials">04 / Testimonials</a>
+                <a href="#contact">05 / Contact</a>
+              </nav>
+            </div>
+
+            <div className="footer-col">
+              <h4>FEATURED WORK</h4>
+              <div className="footer-links">
+                <a href="https://github.com/Itssaurabhpatel/ai-anywhere" target="_blank" rel="noreferrer">AI Anywhere (Indus AppStore) ↗</a>
+                <a href="https://ai-career-coach-one-roan.vercel.app" target="_blank" rel="noreferrer">IntelliAI (Career Coach) ↗</a>
+                <a href="https://track-funds.vercel.app" target="_blank" rel="noreferrer">TrackFunds (Personal Finance) ↗</a>
+                <a href="https://drive.google.com/file/d/1KDRWVngeePfwaCmO1RHVfmH7-Ge5Ao6X/view?usp=sharing" target="_blank" rel="noreferrer">Smart Fee Management ↗</a>
+              </div>
+            </div>
+
+            <div className="footer-col">
+              <h4>CONNECT</h4>
+              <div className="footer-links">
+                <a href="https://github.com/Itssaurabhpatel" target="_blank" rel="noreferrer"><Github size={13} /> GitHub</a>
+                <a href="https://www.linkedin.com/in/itssaurabhpatel" target="_blank" rel="noreferrer"><Linkedin size={13} /> LinkedIn</a>
+                <a href="https://wa.me/917234835991" target="_blank" rel="noreferrer"><WhatsAppIcon size={13} /> WhatsApp</a>
+                <a href="mailto:saurabh.devworks@gmail.com"><Mail size={13} /> saurabh.devworks@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="footer-col">
+              <h4>LOCATION & TIME</h4>
+              <p className="footer-col-text">
+                <strong>Based in India</strong><br />
+                UTC +5:30 (IST)<br />
+                Collaborating with teams globally.
+              </p>
+              <div className="footer-badge">
+                <Clock size={13} />
+                <span>Avg. response: &lt; 24 hrs</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-bottom-bar">
+            <p className="footer-copy">© {new Date().getFullYear()} SAURABH PATEL. ALL RIGHTS RESERVED.</p>
+            <p className="footer-tech">BUILT WITH REACT, VITE & TAILWIND CSS</p>
+            <a href="#top" className="footer-back-top">
+              <span>BACK TO TOP</span>
+              <ArrowUp size={14} />
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }
