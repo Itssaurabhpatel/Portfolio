@@ -475,9 +475,28 @@ export default function App() {
               <p className="footer-tagline">
                 Designing and engineering dependable backend systems, modern web products, and high-conversion digital experiences.
               </p>
-              <div className="footer-status-pill">
-                <span className="live-dot" />
-                <span>Available for freelance contracts & engineering opportunities</span>
+              <div className="footer-availability-card">
+                <div className="availability-card-top">
+                  <div className="availability-status-beacon">
+                    <span className="beacon-ping" />
+                    <span className="beacon-core" />
+                  </div>
+                  <span className="availability-badge">STATUS &bull; ACTIVE CAPACITY</span>
+                  <span className="availability-subbadge">Q2–Q4 2026</span>
+                </div>
+                <div className="availability-card-body">
+                  <div className="availability-text-highlight">
+                    Available for freelance contracts &amp; engineering opportunities
+                  </div>
+                  <p className="availability-subtext">
+                    Open for high-impact web development, system architecture, and AI integrations.
+                  </p>
+                </div>
+                <div className="availability-tags">
+                  <span className="avail-tag">⚡ Fast Delivery</span>
+                  <span className="avail-tag">🌍 Remote Worldwide</span>
+                  <span className="avail-tag">🤝 Direct Collaboration</span>
+                </div>
               </div>
             </div>
 
@@ -540,7 +559,7 @@ export default function App() {
 
           <div className="footer-bottom-bar">
             <p className="footer-copy">© {new Date().getFullYear()} SAURABH PATEL. ALL RIGHTS RESERVED.</p>
-            <p className="footer-tech">BUILT WITH REACT, VITE & TAILWIND CSS</p>
+            {/* <p className="footer-tech">BUILT WITH REACT, VITE & TAILWIND CSS</p> */}
             <a href="#top" className="footer-back-top">
               <span>BACK TO TOP</span>
               <ArrowUp size={14} />

@@ -45,7 +45,21 @@
 .footer-top-tier{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
 .footer-brand-block{max-width:520px;display:flex;flex-direction:column;gap:16px}
 .footer-tagline{font-size:13.5px;line-height:1.8;color:#cbd5e1;margin:0}
-.footer-status-pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);border-radius:20px;font-size:11px;font-weight:600;color:#facc15;align-self:flex-start}
+.footer-availability-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:16px 20px;background:linear-gradient(135deg,rgba(26,29,39,.75) 0%,rgba(14,16,23,.88) 100%);border:1px solid rgba(250,204,21,.25);border-radius:12px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);max-width:500px;transition:border-color .3s,box-shadow .3s,transform .3s;overflow:hidden;margin-top:4px}
+.footer-availability-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(250,204,21,.6),transparent);pointer-events:none}
+.footer-availability-card:hover{border-color:rgba(250,204,21,.48);box-shadow:0 12px 36px -8px rgba(250,204,21,.18),inset 0 1px 0 rgba(255,255,255,.14);transform:translateY(-2px)}
+.availability-card-top{display:flex;align-items:center;gap:10px}
+.availability-status-beacon{position:relative;width:12px;height:12px;display:flex;align-items:center;justify-content:center}
+.beacon-core{width:8px;height:8px;background:#facc15;border-radius:50%;box-shadow:0 0 10px #facc15;z-index:2}
+.beacon-ping{position:absolute;width:18px;height:18px;background:rgba(250,204,21,.35);border-radius:50%;animation:beaconPulse 2s cubic-bezier(0,0,.2,1) infinite;z-index:1}
+@keyframes beaconPulse{0%{transform:scale(.5);opacity:1}100%{transform:scale(2.3);opacity:0}}
+.availability-badge{font-family:Outfit,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.14em;color:#facc15;text-transform:uppercase}
+.availability-subbadge{font-size:10px;font-weight:600;letter-spacing:.08em;color:#94a3b8;padding:2px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:999px;margin-left:auto}
+.availability-card-body{display:flex;flex-direction:column;gap:5px}
+.availability-text-highlight{font-size:13.5px;font-weight:600;line-height:1.45;color:#f8fafc;letter-spacing:-.01em}
+.availability-subtext{font-size:12px;line-height:1.55;color:#94a3b8;margin:0}
+.availability-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:4px;border-top:1px solid rgba(255,255,255,.06)}
+.avail-tag{font-size:11px;font-weight:500;color:#cbd5e1;background:rgba(255,255,255,.04);padding:3px 9px;border-radius:6px;border:1px solid rgba(255,255,255,.06);display:inline-flex;align-items:center;gap:4px}
 .footer-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .footer-cta{padding:12px 22px}
 .footer-resume{padding:12px 20px}
