@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X, Code2, Layers3, MoveUpRight, Play, Star, FileText, Clock, ArrowUp } from 'lucide-react'
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X, Code2, Layers3, MoveUpRight, Play, Star, FileText, Clock, ArrowUp, Phone } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
@@ -154,6 +154,26 @@ const testimonials = [
     company: "Real Estate Solutions Inc.",
     project: "UrbanHaven PropTech",
     impact: "40% faster property search",
+    rating: 5
+  },
+  {
+    quote: "Hands down the most useful keyboard app I’ve used on Android. The 1-tap grammar fix and smart tone rewrites right inside WhatsApp and Gmail without app-switching make everyday typing effortless.",
+    author: "Rohan Verma",
+    initials: "RV",
+    role: "Verified App User",
+    company: "Indus AppStore",
+    project: "AI Anywhere Keyboard",
+    impact: "5★ User Review",
+    rating: 5
+  },
+  {
+    quote: "The WhatsApp automation bot Saurabh engineered handles over 80% of our incoming patient inquiries and appointment bookings automatically. Response times dropped from hours to seconds, and consultation scheduling has never been smoother.",
+    author: "Dr. Ram Arora",
+    initials: "RA",
+    role: "Founder & Consultant",
+    company: "Swastik Ayurveda",
+    project: "WhatsApp Automation System",
+    impact: "<10s patient response time",
     rating: 5
   }
 ]
@@ -476,26 +496,10 @@ export default function App() {
                 Designing and engineering dependable backend systems, modern web products, and high-conversion digital experiences.
               </p>
               <div className="footer-availability-card">
-                <div className="availability-card-top">
-                  <div className="availability-status-beacon">
-                    <span className="beacon-ping" />
-                    <span className="beacon-core" />
-                  </div>
-                  <span className="availability-badge">STATUS &bull; ACTIVE CAPACITY</span>
-                  <span className="availability-subbadge">Q2–Q4 2026</span>
-                </div>
-                <div className="availability-card-body">
-                  <div className="availability-text-highlight">
+                <div className="availability-card-inner">
+                  <span className="availability-text">
                     Available for freelance contracts &amp; engineering opportunities
-                  </div>
-                  <p className="availability-subtext">
-                    Open for high-impact web development, system architecture, and AI integrations.
-                  </p>
-                </div>
-                <div className="availability-tags">
-                  <span className="avail-tag">⚡ Fast Delivery</span>
-                  <span className="avail-tag">🌍 Remote Worldwide</span>
-                  <span className="avail-tag">🤝 Direct Collaboration</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -539,6 +543,7 @@ export default function App() {
                 <a href="https://github.com/Itssaurabhpatel" target="_blank" rel="noreferrer"><Github size={13} /> GitHub</a>
                 <a href="https://www.linkedin.com/in/itssaurabhpatel" target="_blank" rel="noreferrer"><Linkedin size={13} /> LinkedIn</a>
                 <a href="https://wa.me/917234835991" target="_blank" rel="noreferrer"><WhatsAppIcon size={13} /> WhatsApp</a>
+                <a href="tel:+917234835991"><Phone size={13} /> +91 7234835991</a>
                 <a href="mailto:saurabh.devworks@gmail.com"><Mail size={13} /> saurabh.devworks@gmail.com</a>
               </div>
             </div>
