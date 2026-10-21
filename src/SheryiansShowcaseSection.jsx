@@ -141,7 +141,7 @@ const showcaseCards = [
     ],
     cta: 'Explore Automation Tool',
     type: 'tools',
-    bgPattern: '/assets/projects/triangle-lattice-pattern.png'
+    bgPattern: './assets/projects/triangle-lattice-pattern.png'
   }
 ]
 
@@ -216,7 +216,7 @@ function CardVisualPreview({ card }) {
 
           {/* Central Smartphone Mockup (Tightly cropped with zero ghost margin) */}
           <img
-            src="/assets/projects/phone-mockup-clean.png"
+            src="./assets/projects/phone-mockup-clean.png"
             alt="Floating WhatsApp Chat Smartphone Mockup"
             className="floating-phone-img"
           />
@@ -224,10 +224,10 @@ function CardVisualPreview({ card }) {
           {/* Right Bottom Feature Cards (GIFs & Stickers) */}
           <div className="phone-cards-right">
             <div className="phone-media-card card-pos-gifs" data-ai-pill="5">
-              <img src="/assets/projects/card-gifs.png" alt="Add Your Own GIFs" />
+              <img src="./assets/projects/card-gifs.png" alt="Add Your Own GIFs" />
             </div>
             <div className="phone-media-card card-pos-stickers" data-ai-pill="6">
-              <img src="/assets/projects/card-stickers.png" alt="Add Your Own Stickers" />
+              <img src="./assets/projects/card-stickers.png" alt="Add Your Own Stickers" />
             </div>
           </div>
         </div>
@@ -742,7 +742,7 @@ export default function SheryiansShowcaseSection() {
               {/* Decorative Geometric Background Pattern */}
               <div className="card-bg-pattern-layer" aria-hidden="true">
                 <img
-                  src={card.bgPattern || '/assets/projects/triangle-lattice-pattern.png'}
+                  src={card.bgPattern || './assets/projects/triangle-lattice-pattern.png'}
                   alt=""
                   className="card-bg-pattern-img"
                 />
